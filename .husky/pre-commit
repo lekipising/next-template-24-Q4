@@ -1,0 +1,4 @@
+echo
+echo '🏗️👷 Just ensuring the code you wrote is healthy...'
+echo
+pnpm run lint-staged

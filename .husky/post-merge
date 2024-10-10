@@ -1,0 +1,11 @@
+echo
+echo '🏗️👷 Checking if we have new packages'
+echo
+changed () {
+  git diff --name-only HEAD@{1} HEAD | grep "^$1" > /dev/null 2>&1
+}
+
+if changed 'pnpm-lock.yaml'; then
+  echo "📦 pnpm-lock.yaml changed. Running pnpm install for you ..."
+  pnpm install
+fi
